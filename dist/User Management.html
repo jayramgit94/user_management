@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="./User Management_files/styles.css" />
+    <link rel="stylesheet" href="../crud-fake-db/public/styles.css" />
+    <style id="dark-reader-style" type="text/css">
+      @media screen {
+        html {
+          -webkit-transition: -webkit-filter 300ms linear;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>User Management</h1>
+        <form action="http://localhost:3000/" method="GET">
+          <input
+            type="text"
+            name="search"
+            value=""
+            placeholder="Search by name or email"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <!-- Add User Button -->
+        <a href="http://localhost:3000/add">
+          <button class="add-btn">Add User</button>
+        </a>
+      </header>
+
+      <!-- Table Section -->
+      <section class="user-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jayram sangawat</td>
+              <td>sangawatjayram@gmail.com</td>
+              <td>24</td>
+              <td>
+                <a href="http://localhost:3000/edit/1744608200932">Edit</a>
+                <a href="http://localhost:3000/delete/1744608200932">Delete</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>jayram</td>
+              <td>jayramsanawat@gmail.com</td>
+              <td>32342</td>
+              <td>
+                <a href="http://localhost:3000/edit/1744608216492">Edit</a>
+                <a href="http://localhost:3000/delete/1744608216492">Delete</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Avira</td>
+              <td>adajs@kjbkf.com</td>
+              <td>23423</td>
+              <td>
+                <a href="http://localhost:3000/edit/1744608233622">Edit</a>
+                <a href="http://localhost:3000/delete/1744608233622">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Pagination Section -->
+    </div>
+  </body>
+  <script src="../crud-fake-db/app.js"></script>
+</html>
