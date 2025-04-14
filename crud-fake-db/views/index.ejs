@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>User Management</h1>
+      <form action="/" method="GET">
+        <input type="text" name="search" value="<%= searchQuery %>" placeholder="Search by name or email">
+        <button type="submit">Search</button>
+      </form>
+      <!-- Add User Button -->
+      <a href="/add">
+        <button class="add-btn">Add User</button>
+      </a>
+    </header>
+
+    <!-- Table Section -->
+    <section class="user-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.age %></td>
+              <td>
+                <a href="/edit/<%= user.id %>">Edit</a>
+                <a href="/delete/<%= user.id %>">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Pagination Section -->
+    <% if (totalPages > 1) { %>
+      <div class="pagination">
+        <% if (page > 1) { %>
+          <a href="/?page=<%= page - 1 %>&search=<%= searchQuery %>">Previous</a>
+        <% } %>
+
+        <% if (page < totalPages) { %>
+          <a href="/?page=<%= page + 1 %>&search=<%= searchQuery %>">Next</a>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>
